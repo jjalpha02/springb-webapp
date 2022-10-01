@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add CSS and JS to Thymeleaf</title>
+        <link th:href="@{/css/style.css}" rel="stylesheet" />
+    </head>
+    <body>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Libelle</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item : ${articles}">
+                    <td th:text="${item.id}"></td>
+                    <td th:text="${item.libelle}"></td>
+                    <td><a th:href="@{/edit/{id}(id=${item.id})}">Edit</a></td>
+                    <td><a th:href="@{/delete/{id}(id=${item.id})}">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </body>
+    <script type="text/javascript" th:src="@{/js/myjs.js}"></script>
+</html>
