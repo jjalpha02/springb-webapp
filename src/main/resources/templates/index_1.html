@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add CSS and JS to Thymeleaf</title>
+        <link th:href="@{/css/style.css}" rel="stylesheet" />
+    </head>
+    <body>
+        <h2 th:text="{{articles.size()}}">Carefully Styled Heading</h2>
+        <p>
+            This is text on which we want to apply <strong>very special</strong> styling.
+        </p>
+    </body>
+    <script type="text/javascript" th:src="@{/js/myjs.js}"></script>
+</html>
